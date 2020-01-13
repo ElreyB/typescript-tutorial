@@ -1,5 +1,7 @@
 interface Link {
+  description?: string;
   url: string;
+  id?: string;
 }
 
 function filterByTerm(input: Array<Link>, searchTerm: string) {
