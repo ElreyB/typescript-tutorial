@@ -1,14 +1,15 @@
 interface Link {
   description?: string;
   url: string;
-  id?: string;
+  id?: number;
+  [index: string]: any;
 }
 
 interface TranslatedLink extends Link {
   language: string;
 }
 
-const link1: TranslatedLink = {
+const newLink: TranslatedLink = {
   description:
     "TypeScript tutorial for beginners is a tutorial for all the JavaScript developers ...",
   id: 1,
@@ -16,12 +17,16 @@ const link1: TranslatedLink = {
   language: "en"
 };
 
-function filterByTerm(input: Array<Link>, searchTerm: string) {
+function filterByTerm(
+  input: Array<Link>,
+  searchTerm: string,
+  lookupKey: string = "url"
+) {
   if (!searchTerm) throw Error("searchTerm cannot be empty");
   if (!input.length) throw Error("input cannot be empty");
   const regex = new RegExp(searchTerm, "i");
   return input.filter(function(arrayElement) {
-    return arrayElement.url.match(regex);
+    return arrayElement[lookupKey].match(regex);
   });
 }
 
