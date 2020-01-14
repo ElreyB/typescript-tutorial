@@ -3,7 +3,7 @@ interface Person {
   city: string;
   age: number;
   printDetails(): string;
-  getAge(year: number): number;
+  printAge(year: number): number;
 }
 
 const tom: Person = {
@@ -13,9 +13,10 @@ const tom: Person = {
   printDetails: function() {
     return `${this.name} - ${this.city}`;
   },
-  getAge: function(year) {
+  printAge: function(year) {
     return year - this.age;
   }
 };
 
-console.log(tom.getAge(2020));
+console.log(tom.printAge(2020));
+console.log(tom.printDetails());
