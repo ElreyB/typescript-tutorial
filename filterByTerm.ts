@@ -36,6 +36,6 @@ const obj3: Link = { url: "string3" };
 
 const arrOfLinks: Array<Link> = [obj1, obj2, obj3];
 
-const term: string = "java";
+const term: string = "string1";
 
-filterByTerm(arrOfLinks, term);
+console.log(filterByTerm(arrOfLinks, term));

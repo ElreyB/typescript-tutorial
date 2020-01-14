@@ -2,6 +2,6 @@
   "compilerOptions": {
     "target": "es5",
     "strict": true,
-    "noEmit": true
+    "outDir": "./lib"
   }
 }
