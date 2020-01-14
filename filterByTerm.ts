@@ -1,3 +1,5 @@
+type Links = Array<Link>;
+
 interface Link {
   description?: string;
   url: string;
@@ -18,10 +20,10 @@ const newLink: TranslatedLink = {
 };
 
 function filterByTerm(
-  input: Array<Link>,
+  input: Links,
   searchTerm: string,
   lookupKey: string = "url"
-): Array<Link> {
+): Links {
   if (!searchTerm) throw Error("searchTerm cannot be empty");
   if (!input.length) throw Error("input cannot be empty");
   const regex = new RegExp(searchTerm, "i");
@@ -34,7 +36,7 @@ const obj1: Link = { url: "string1" };
 const obj2: Link = { url: "string2" };
 const obj3: Link = { url: "string3" };
 
-const arrOfLinks: Array<Link> = [obj1, obj2, obj3];
+const arrOfLinks: Links = [obj1, obj2, obj3];
 
 const term: string = "string1";
 
