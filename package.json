@@ -5,7 +5,7 @@
   "license": "MIT",
   "scripts": {
     "tsc": "tsc",
-    "start": "rm -rf lib && tsc && node ./lib/filterByTerm.js"
+    "start": "rm -rf lib && tsc && node ./lib/filterByTerm.js && node ./lib/interfaces-functions.js"
   },
   "devDependencies": {
     "typescript": "^3.7.4"
